@@ -1,0 +1,13 @@
+//config.json
+{
+  "idbot": "id of the bot",
+
+  "staff": "id of the role support",
+   
+  "member": "id of the role member",
+
+  "prefix": "YOUR PREFIX",
+
+  "footerText": "the footer of the embeds"
+
+}
