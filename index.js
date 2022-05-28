@@ -12,7 +12,7 @@ const config = require("./config.json");
 client.login("TOKEN");
 
 client.on("ready", () => {
-    client.user.setActivity("play.squidmc.it")
+    client.user.setActivity("YOUR ACTIVITY")
 
 })
 
@@ -45,7 +45,7 @@ for (const file of eventsFiles) {
 }
 
 client.on("message", message => {
-    const prefix = "!";
+    const prefix = "your prefix";
 
     if (!message.content.startsWith(prefix) || message.author.bot) return
 
@@ -58,7 +58,7 @@ client.on("message", message => {
 
     if (comando.onlyStaff) {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            message.channel.send("Non hai il permesso di eseguire questo comando")
+            message.channel.send("You Don't Have Permission)
             return
         }
     }
@@ -66,30 +66,30 @@ client.on("message", message => {
     comando.execute(message, client, args);
 })
 
-// COMANDI VERIFICAAA
+// SYSTEM VERIFY
 
 client.on('messageCreate', (message) => {
 
-    const benitopippo = new MessageEmbed()
+    const embedverify = new MessageEmbed()
         .setColor('BLUE')
-        .setTitle('VERIFICA')
-        .addField('Come posso verificarmi?', 'Per verificarti basta che clicchi sul pulsante qui sotto, per qualsiasi problema apri un ticket!')
-        .setFooter('SquidMC Management', 'https://i.imgur.com/uFQcJeJ.png')
+        .setTitle('VERIFY')
+        .addField('How can I verify myself? ', ' To verify you just click on the button below, for any problem open a ticket!')
+        .setFooter('your footer', 'your link images or logo)
 
-    const vivalafiga = new MessageActionRow()
+    const buttonverify = new MessageActionRow()
 
         .setComponents(
              new MessageButton()
-                .setCustomId('freccia sin')
+                .setCustomId('left arrow')
                 .setLabel('»')
                 .setStyle('SUCCESS')
                 .setDisabled(true),
             new MessageButton()
-                .setCustomId('verifica')
+                .setCustomId('verify')
                 .setLabel('✅')
                 .setStyle('SUCCESS'),
             new MessageButton()
-                .setCustomId('freccia des')
+                .setCustomId('right arrow')
                 .setLabel('«')
                 .setStyle('SUCCESS')
                 .setDisabled(true),
@@ -97,33 +97,29 @@ client.on('messageCreate', (message) => {
     
         
 
-    if (message.content == config.prefix + "setupverificaforzafloppa") {
+    if (message.content == config.prefix + "your text - command to bring up the embed of the verification") {
         message.delete()
-        message.channel.send({ embeds: [benitopippo], components: [vivalafiga]})
+        message.channel.send({ embeds: [embedverify], components: [buttonverify]})
     }
 })
 
 client.on('interactionCreate', (interaction) => {
 
-    if (interaction.customId == 'verifica') {
+    if (interaction.customId == 'verify') {
         interaction.reply({
-            content: '**___Sei stato verificato correttamente! \:trident: ___**',
+            content: 'You have been successfully verified!',
             ephemeral: true
         })
-        interaction.member.roles.add('967169917277331517')
+        interaction.member.roles.add('role member')
     }
 })
 
-// EVENTO BENVENUTO
+// EVENT WELCOME
 
 client.on("guildMemberAdd", member => {
     var embed = new MessageEmbed()
         .setTitle("WELCOME")
-        .setDescription(`Ciao ${member.toString()}, benvenuto in ${member.guild.name}. Sei il **${member.guild.memberCount}° Membro**`)
+        .setDescription(`Hello ${member.toString()}, welcome in ${member.guild.name}. you are the **${member.guild.memberCount}° member**`)
     
-        client.channels.cache.get("967421571855708180").send({embeds: [embed]});
+        client.channels.cache.get("id room tho send this embed").send({embeds: [embed]});
 })
-
-
-// COMANDI PEX E DEPEX FORZA FLOPPA
-// COMING SOON
