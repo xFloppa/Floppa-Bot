@@ -9,7 +9,7 @@ const { readdirSync } = require('fs');
 
 const config = require("./config.json");
 
-client.login("OTY1NTQwNDM0NzI0MTMwODY2.Yl0rmg.y-M5oMZs_v0mz6NadpyCczX9YU0");
+client.login("TOKEN");
 
 client.on("ready", () => {
     client.user.setActivity("play.squidmc.it")
