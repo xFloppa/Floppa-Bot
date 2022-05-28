@@ -34,7 +34,7 @@ npm i
 ```json
 //token.json
 {
-  "TOKEN": "token of your discord bot"
+  "token": "token of your discord bot"
 }
 ```
 
