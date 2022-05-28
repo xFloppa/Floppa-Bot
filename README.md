@@ -18,11 +18,16 @@ npm i
 ```json
 //config.json
 {
-  "IDBOT": "id of the bot",
+  "idbot": "id of the bot",
 
-  "IDSTAFF": "id of the role support",
-  
-  "FOOTERTEXT": "the footer of the embeds"
+  "staff": "id of the role support",
+   
+  "member": "id of the role member",
+
+  "prefix": "YOUR PREFIX",
+
+  "footerText": "the footer of the embeds"
+
 }
 ```
 
