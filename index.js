@@ -72,15 +72,15 @@ client.on('messageCreate', (message) => {
 
     const embedverify = new MessageEmbed()
         .setColor('BLUE')
-        .setTitle('VERIFY')
-        .addField('How can I verify myself? ', ' To verify you just click on the button below, for any problem open a ticket!')
-        .setFooter('your footer', 'your link images or logo)
+        .setTitle('TITLE')
+        .addField('DESCRIPTION1', 'DESCRIPTION2')
+        .setFooter('FOOTER', 'LINK')
 
-    const buttonverify = new MessageActionRow()
+    const bottonverify = new MessageActionRow()
 
         .setComponents(
              new MessageButton()
-                .setCustomId('left arrow')
+                .setCustomId('arrowL')
                 .setLabel('»')
                 .setStyle('SUCCESS')
                 .setDisabled(true),
@@ -89,7 +89,7 @@ client.on('messageCreate', (message) => {
                 .setLabel('✅')
                 .setStyle('SUCCESS'),
             new MessageButton()
-                .setCustomId('right arrow')
+                .setCustomId('arrowR')
                 .setLabel('«')
                 .setStyle('SUCCESS')
                 .setDisabled(true),
@@ -97,9 +97,9 @@ client.on('messageCreate', (message) => {
     
         
 
-    if (message.content == config.prefix + "your text - command to bring up the embed of the verification") {
+    if (message.content == config.prefix + "your command") {
         message.delete()
-        message.channel.send({ embeds: [embedverify], components: [buttonverify]})
+        message.channel.send({ embeds: [embedverify], components: [bottonverify]})
     }
 })
 
@@ -107,10 +107,10 @@ client.on('interactionCreate', (interaction) => {
 
     if (interaction.customId == 'verify') {
         interaction.reply({
-            content: 'You have been successfully verified!',
+            content: '**___after verification there is this description___**',
             ephemeral: true
         })
-        interaction.member.roles.add('role member')
+        interaction.member.roles.add(config.member)
     }
 })
 
