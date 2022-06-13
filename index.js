@@ -8,8 +8,9 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 const { readdirSync } = require('fs');
 
 const config = require("./config.json");
+const token = require("./token.json");
 
-client.login("TOKEN");
+client.login(token.token);
 
 client.on("ready", () => {
     client.user.setActivity("YOUR ACTIVITY")
