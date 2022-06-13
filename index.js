@@ -109,6 +109,7 @@ client.on('interactionCreate', (interaction) => {
         .setDescription(`<@${interaction.member.id}> It Occurred Correctly!`)
     
     const channelLog = client.channels.cache.get("ID CHANNEL LOG");
+    
 
     if (interaction.customId == 'verify') {
         interaction.reply({
@@ -116,9 +117,10 @@ client.on('interactionCreate', (interaction) => {
             ephemeral: true
         })
         interaction.member.roles.add(config.member)
+        
+        channelLog.send({embeds: [logverify] });
     }
-    
-    channelLog.send({embeds: [logverify] });
+ 
 })
 
 // EVENT WELCOME
