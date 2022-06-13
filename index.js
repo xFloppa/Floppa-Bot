@@ -94,8 +94,6 @@ client.on('messageCreate', (message) => {
                 .setStyle('SUCCESS')
                 .setDisabled(true),
         )
-    
-        
 
     if (message.content == config.prefix + "your command") {
         message.delete()
@@ -105,6 +103,13 @@ client.on('messageCreate', (message) => {
 
 client.on('interactionCreate', (interaction) => {
 
+    const logverify = new MessageEmbed()
+        .setColor('GREEN')
+        .setTitle('VERIFY LOG')
+        .setDescription(`<@${interaction.member.id}> It Occurred Correctly!`)
+    
+    const channelLog = client.channels.cache.get("ID CHANNEL LOG");
+
     if (interaction.customId == 'verify') {
         interaction.reply({
             content: '**___after verification there is this description___**',
@@ -112,6 +117,8 @@ client.on('interactionCreate', (interaction) => {
         })
         interaction.member.roles.add(config.member)
     }
+    
+    channelLog.send({embeds: [logverify] });
 })
 
 // EVENT WELCOME
