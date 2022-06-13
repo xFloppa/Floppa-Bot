@@ -58,7 +58,7 @@ client.on("message", message => {
 
     if (comando.onlyStaff) {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            message.channel.send("You Don't Have Permission)
+            message.channel.send("You Don't Have Permission")
             return
         }
     }
