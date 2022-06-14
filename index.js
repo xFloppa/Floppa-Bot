@@ -113,16 +113,24 @@ client.on('interactionCreate', (interaction) => {
     
 
     if (interaction.customId == 'verify') {
-        interaction.reply({
-            content: '**___after verification there is this description___**',
-            ephemeral: true
-        })
-        interaction.member.roles.add(config.member)
-        
-        channelLog.send({embeds: [logverify] });
+        if(interaction.member.roles.cache.get(config.member)){
+            return interaction.reply({
+                content: '**___You have already been verified!___**',
+                ephemeral: true
+            })
+        }else{
+
+            interaction.reply({
+                content: '**___after verification there is this description___**',
+                ephemeral: true
+            })
+            interaction.member.roles.add(config.member)
+
+            channelLog.send({embeds: [logverify] });
+            return;
+        }   
+       
     }
- 
-})
 
 // EVENT WELCOME
 
