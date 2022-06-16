@@ -12,7 +12,7 @@ module.exports = {
         const BlockChannel = new MessageEmbed()
             .setColor('RED')
             .setTitle('CHAT LOCK')
-            .setDescription('Se desideri bloccare la chat clicca sul pulsante qui sotto per bloccarla!')
+            .setDescription('If you want to block the chat click on the button below to block it!')
             .setFooter({
                 text: 'Your Footer'
             })
