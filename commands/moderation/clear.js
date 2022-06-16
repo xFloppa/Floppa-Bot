@@ -15,8 +15,7 @@ module.exports={
         }
         var count = parseInt(message.content.split(/\s+/)[1]);
         if(!count){
-            return message.channel.send('\:question: » `Specifies The Number Of Messages To Delete
-`');
+            return message.channel.send('\:question: » `Specifies The Number Of Messages To Delete`');
         };
         if(count>100){
             return message.channel.send('\:x: » `You cannot delete more than [100] messages at a time`')
